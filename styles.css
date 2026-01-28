@@ -1,0 +1,752 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.dates {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Info Section */
+.info-section {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.info-section .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+/* Countdown Section */
+.countdown-section {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* Memories Section */
+.memories-section {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.subtle-hint {
+    text-align: center;
+    margin: 2rem 0;
+    color: #666;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.memory-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.memory-card:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.memory-card span {
+    display: block;
+    margin-top: 1rem;
+    font-style: italic;
+    color: #888;
+}
+
+/* Glitch Effects */
+.glitch-text {
+    position: relative;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px #ff00de, -2px -2px #00fff9;
+        transform: translate(0);
+    }
+    20% {
+        text-shadow: -2px 2px #00fff9, 2px -2px #ff00de;
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        text-shadow: 2px -2px #ff00de, -2px 2px #00fff9;
+        transform: translate(2px, -2px);
+    }
+    60% {
+        text-shadow: -2px -2px #00fff9, 2px 2px #ff00de;
+    }
+    80% {
+        text-shadow: 2px 2px #ff00de, -2px -2px #00fff9;
+    }
+    100% {
+        text-shadow: none;
+        transform: translate(0);
+    }
+}
+
+.glitch-number:hover {
+    animation: glitch 0.3s infinite;
+    cursor: help;
+}
+
+.hidden-message {
+    opacity: 0.7;
+    transition: all 0.5s ease;
+}
+
+.hidden-message:hover {
+    opacity: 1;
+    background: #ffe0e0;
+    border-left-color: #ff0000;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Itinerary */
+.itinerary-section {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+}
+
+.day-card {
+    background: white;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #667eea;
+}
+
+.day-header h2 {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+
+.day-theme {
+    background: #667eea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.schedule {
+    list-style: none;
+}
+
+.schedule li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.schedule li:last-child {
+    border-bottom: none;
+}
+
+.time {
+    background: #f0f0f0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    font-weight: bold;
+    color: #667eea;
+    min-width: 90px;
+    text-align: center;
+}
+
+/* Anomaly Effects */
+.anomaly {
+    position: relative;
+}
+
+.anomaly::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255,0,0,0.03) 2px,
+        rgba(255,0,0,0.03) 4px
+    );
+    pointer-events: none;
+}
+
+.date-glitch {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.date-glitch:hover::after {
+    content: attr(data-original);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgba(255,0,0,0.5);
+    animation: glitch 0.3s infinite;
+}
+
+.corrupted-text {
+    color: #666;
+    text-decoration: line-through;
+    position: relative;
+}
+
+.corrupted-text::after {
+    content: attr(data-original);
+    position: absolute;
+    left: 0;
+    color: rgba(255,0,0,0.6);
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.corrupted-text:hover::after {
+    opacity: 1;
+}
+
+.hidden-day {
+    margin-top: 3rem;
+}
+
+.glitch-card {
+    border: 2px solid #ff0000;
+    background: rgba(255,0,0,0.05);
+    animation: glitch 2s infinite;
+}
+
+.error-text {
+    color: #ff0000;
+}
+
+.static-text {
+    background: #000;
+    color: #000;
+    text-shadow: none;
+}
+
+.corrupted {
+    color: #ff0000;
+}
+
+.hidden-link {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.5; }
+}
+
+/* Packing List */
+.packing-section {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.packing-category {
+    background: #f9f9f9;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+
+.packing-category h2 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+}
+
+.packing-list {
+    list-style: none;
+}
+
+.packing-list li {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.packing-list li:hover {
+    background: white;
+    padding-left: 1.5rem;
+}
+
+.packing-list li::before {
+    content: '✓ ';
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.forbidden li::before {
+    content: '✗ ';
+    color: #ff0000;
+}
+
+.hidden-warning {
+    opacity: 0.3;
+    font-style: italic;
+}
+
+.hidden-warning:hover {
+    opacity: 1;
+    background: #ffe0e0;
+    color: #ff0000;
+}
+
+/* Cipher Puzzle */
+.packing-list li[data-cipher]::after {
+    content: attr(data-cipher);
+    margin-left: 0.5rem;
+    color: transparent;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.packing-list li[data-cipher]:hover::after {
+    color: rgba(102, 126, 234, 0.3);
+}
+
+.cipher-card {
+    background: #fff9e6;
+    border-left: 4px solid #ffcc00;
+}
+
+.hidden-cipher {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.cipher-card:hover .hidden-cipher {
+    opacity: 1;
+}
+
+/* Packing Tips */
+.packing-tips {
+    margin: 3rem 0;
+}
+
+.packing-tips h3 {
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.download-section {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* FAQ */
+.faq-section {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.faq-item {
+    background: #f9f9f9;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: white;
+    border: none;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #667eea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #f0f0f0;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.corrupted-inline {
+    color: rgba(255,0,0,0.7);
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+.warning-text {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.hidden-text-reveal {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.faq-answer:hover .hidden-text-reveal {
+    opacity: 1;
+    color: #666;
+}
+
+.anomaly-faq {
+    border-left: 3px solid rgba(255,0,0,0.3);
+}
+
+.glitch-text-static {
+    color: #ff0000;
+    font-family: 'Courier New', monospace;
+}
+
+.small-text {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.still-questions {
+    text-align: center;
+    margin: 4rem 0 2rem 0;
+}
+
+.still-questions h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.puzzle-trigger {
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.puzzle-trigger:hover {
+    color: #ff0000;
+}
+
+.hidden-faq {
+    animation: glitch 1s infinite;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer-small {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+}
+
+.clickable-hint {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.clickable-hint:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+.puzzle-hint {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.puzzle-hint:hover {
+    color: #ff0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .day-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .memory-grid,
+    .tip-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Scroll Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
